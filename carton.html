@@ -21,6 +21,7 @@
             height: 200px;
             position: relative;
             list-style: none;
+            background-color: #000;
             padding: 0;
             /* 过渡 */
             transition: all 1s;
@@ -31,6 +32,13 @@
             box-shadow: 0px 0px 5px #000;
             z-index: 999;
         }
+
+        ul:hover {
+            background-color:#fff;
+            transform: rotateX(30deg) rotateZ(30deg) rotateY(10deg)
+        }
+
+        
     </style>
 <body>
     <ul>
