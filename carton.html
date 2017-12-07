@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +11,71 @@
             width: 100%;
             height: 100%;
         }
+
         body {
             height: 100%;
-            /* 画太阳 */
-            background: radial-gradient(300px at top left, red, yellow, yellowgreen) no-repeat;
+            background: radial-gradient(300px at top left, red, yellow, #fff) no-repeat;
+            /* background-color: skyblue; */
         }
+
         ul {
-            margin: 200px auto;
-            width: 200px;
-            height: 200px;
             position: relative;
             list-style: none;
-            background-color: #000;
+            perspective: 300px;
             padding: 0;
-            /* 过渡 */
+            margin: 200px auto;
+            width: 100px;
+            height: 100px;
             transition: all 1s;
-            /* 钉一个钉子 */
             transform-origin: left;
-            /* 给个边框 */
-            border: solid 1px #000;
+            border: 1px solid #000;
             box-shadow: 0px 0px 5px #000;
             z-index: 999;
         }
 
         ul:hover {
-            background-color:#fff;
-            transform: rotateX(30deg) rotateZ(30deg) rotateY(10deg)
+            transform: rotateX(30deg) rotateZ(30deg);
         }
 
         ul li {
             padding: 0;
-            width: 100px;
-            height: 100px;
-            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            background-color: white;
             position: absolute;
             transform-origin: left;
             border: 1px solid #000;
             box-shadow: 0px 0px 5px #000;
+
+            /* 给纸张开启3d效果 */
             transform-style: preserve-3d;
         }
+
+        ul:hover li:nth-child(4) {
+            transition: all 1s 0.5s;
+            transform: rotateY(-90deg);
+        }
+
+        ul:hover li:nth-child(3) {
+            transition: all 1s 1s;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+
+        ul:hover li:nth-child(2) {
+            transition: all 1s 1.5s;
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+
+        ul:hover li:nth-child(1) {
+            transition: all 1s 2s;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
     </style>
+</head>
+
 <body>
     <ul>
         <li></li>
@@ -58,4 +84,5 @@
         <li></li>
     </ul>
 </body>
+
 </html>
